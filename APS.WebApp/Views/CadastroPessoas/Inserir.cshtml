@@ -1,0 +1,53 @@
+﻿@using APS.Dominio.Entities;
+@model CadastroPessoas
+
+
+    <div id="main-container">
+        <h1>Cadastre-se para entrar</h1>
+        <form asp-action="InserirConfirmar" asp-controller="CadastroPessoas" method="POST">
+        
+            <div class="half-box spacing">
+                <label for="Nome">Nome</label>
+                <input asp-for="Nome" class="form-control" />
+            </div>
+            <div class="half-box">
+                <label for="Sobrenome">Sobrenome</label>
+                <input asp-for="Sobrenome" class="form-control" />
+            </div>
+            <div class="half-box spacing">
+                <label for="CPF">CPF (Sem pontos e traços)</label>
+                <input asp-for="CPF" class="form-control" />
+            </div>
+           
+
+            <div class="half-box">
+                <label for="Endereco">Endereço</label>
+                <input asp-for="Endereco" class="form-control" />
+            </div>
+            <div class="full-box">
+                <label for="Email">E-mail</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+        <div class="half-box spacing">
+            <label for="Senha">Senha</label>
+            <input asp-for="Senha" type="password" class="form-control" />
+        </div>
+
+            <div class="half-box spacing">
+                @Html.LabelFor(model => model.Sexo)
+                @Html.DropDownListFor(model => model.Sexo, (List<SelectListItem>)ViewBag.SexosDisponiveis, "-- Selecione --", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sexo)
+            </div>
+
+            <div>
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+            </div>
+            <hr />
+            <div class="full-box">
+                <input id="btn-submit" type="submit" value="Registrar">
+            </div>
+        </form>
+    </div>
+
+    <p class="error-validation template"> </p>

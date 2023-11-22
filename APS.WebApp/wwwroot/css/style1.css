@@ -1,0 +1,38 @@
+﻿
+
+
+
+
+
+
+
+#numeros {
+    position: relative;
+    text-align: center;
+    color: #ffffff; /* Cor do texto */
+}
+
+    #numeros h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    #numeros p {
+        font-size: 1.5em;
+    }
+
+/* Adicione estilos para a animação aqui */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.wow {
+    animation: fadeIn 1s ease-in-out;
+}
+

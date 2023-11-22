@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\CadastroPessoas\DeletarCadastro.cshtml" />
+    <Content Remove="wwwroot\js\script1.js" />
+    <Content Remove="wwwroot\js\server.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\script1.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\server.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\script1.js" />
+    <None Include="wwwroot\js\server.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.3.1" />
+    <PackageReference Include="DropDownList.Optgroup.MVC" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="Node.js" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APS.CrossCuting\APS.CrossCuting.csproj" />
+    <ProjectReference Include="..\APS.Dados\APS.Dados.csproj" />
+    <ProjectReference Include="..\APS.Dominio\APS.Dominio.csproj" />
+    <ProjectReference Include="..\APS.Servico\APS.Servico.csproj" />
+  </ItemGroup>
+
+</Project>

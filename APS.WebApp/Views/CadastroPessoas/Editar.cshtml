@@ -1,0 +1,67 @@
+﻿@using APS.Dominio.Entities;
+@model CadastroPessoas
+
+
+
+@{
+    ViewBag.Title = "Editar Pessoa";
+}
+
+<h2>Editar Pessoa</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CadastroPessoasID)
+        @Html.TextBoxFor(model => model.CadastroPessoasID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CadastroPessoasID, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nome)
+        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sobrenome)
+        @Html.TextBoxFor(model => model.Sobrenome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CPF)
+        @Html.TextBoxFor(model => model.CPF, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sexo)
+        @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Endereco)
+        @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Senha)
+        @Html.TextBoxFor(model => model.Senha, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para a Lista", "Index")
+</div>
+

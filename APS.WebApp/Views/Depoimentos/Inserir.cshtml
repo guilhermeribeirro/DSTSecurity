@@ -1,0 +1,27 @@
+﻿@using APS.Dominio.Entities;
+@model Depoimentos
+
+
+<div id="main-container">
+    <h1>Escreva seu Relato</h1>
+    <form asp-action="InserirConfirmar" asp-controller="Depoimentos" method="POST">
+
+        <div class="full-box">
+            <center><label for="Nome">Nome(se não quiser se identificar, escreva ANONIMO)</label></center>
+            <input asp-for="Nome1" class="form-control" />
+        </div>
+        <div class="full-box">
+            <center><label for="Relato">Relato</label></center>
+            <textarea asp-for="Relato" class="form-control" rows="8"></textarea>
+        </div>
+
+
+        
+        <hr />
+        <div class="full-box">
+            <input id="btn-submit" type="submit" value="Registrar">
+        </div>
+    </form>
+</div>
+
+<p class="error-validation template"> </p>

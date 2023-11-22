@@ -1,0 +1,29 @@
+﻿@using APS.Dominio.Entities;
+@model CadastroPessoas
+
+<h2>Confirmação de Exclusão</h2>
+<p>Tem certeza de que deseja excluir o usuário abaixo?</p>
+
+<div>
+    <dl class="row">
+        
+
+        <dt class="col-sm-2">Nome:</dt>
+        <dd class="col-sm-10">@Model.Nome</dd>
+
+        <dt class="col-sm-2">CPF:</dt>
+        <dd class="col-sm-10">@Model.CPF</dd>
+
+        <!-- Adicione outras propriedades conforme necessário -->
+
+    </dl>
+</div>
+
+<form asp-action="Excluir" method="post">
+    <input type="hidden" asp-for="CPF" />
+
+    <p>
+        <input type="submit" value="Confirmar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </p>
+</form>

@@ -1,0 +1,21 @@
+﻿@using APS.Dominio.Entities;
+@model CadastroPessoas
+
+
+
+
+<h2>Excluir Pessoa</h2>
+
+<p>Tem certeza de que deseja excluir esta pessoa?</p>
+
+<p>
+    <strong>Seu ID Fonecido: </strong> @Model.CadastroPessoasID <!-- Substitua com os campos relevantes do seu modelo -->
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+    @Html.ActionLink("Cancelar", "Index")
+}
