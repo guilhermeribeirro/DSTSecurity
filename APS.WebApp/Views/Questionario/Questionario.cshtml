@@ -1,71 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Questionário de autodiagnóstico de DSTs</title>
-  <meta name = "viewport" context="width=device-width, initial- scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Questionário de autodiagnóstico de DSTs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <input type= "radio" name = "len" id = "length" value = "length" >
-    <input type= "radio" name = "len" id = "length" value = "length" >
-     <input type= "radio" name = "len" id = "width" value = "width" >
-      <input type= "radio" name = "len" id = "widht" value = "widht" >
-       <input type= "radio" name = "len" id = "heigth" value = "heigth" >
-        <input type= "radio" name = "len" id = "height" value = "height" >
-         
+    <input type="radio" name="len" id="length" value="length">
+    <input type="radio" name="len" id="lenght" value="lenght">
 
-          <input type= "radio" name = "len" id = "length" value = "length" >
+    <!-- Outros inputs comentados para remoção temporária -->
 
+    <link rel="stylesheet" href="~/css/styles5.css" />
     <main>
-
-
         <header>
-            <h1> Veja se voce já é um senior</h1>
-            <h2> Se voce escolher corretamente abaixo, já es master</h2>
-
-
-
-
-
+            <h1>Veja se você já é um senior</h1>
+            <h2>Se você escolher corretamente abaixo, já é master</h2>
         </header>
 
-        <section id ="answers">
-
-            <div id = "ansLen" class "ans">
-                <label for ="length">.length</label>
-                <label for ="lenght">.lenght</label>
+        <section id="answers">
+            <div id="ansLen" class="ans">
+                <label for="length">.length</label>
+                <label for="lenght">.lenght</label>
             </div>
-            <div id = "ansWid" class "ans">
-                <label for ="width">.width</label>
-                <label for ="widht">.widht</label>
-                </div>
-
-                <div id = "ansHei" class "ans">
-                <label for ="heigth">.heigth</label>
-                <label for ="height">.height</label>
-                </div>
-
-
+            <!-- Outros divs comentados para remoção temporária -->
         </section>
 
-        <section id = "congrats">
-
+        <section id="congrats">
             Congrats!!
-
-
         </section>
 
-
-
-
-
+        <!-- Adicione o botão para passar para o próximo quiz -->
+        <button onclick="passarProximoQuiz()">Próximo Quiz</button>
 
     </main>
 
+    <!-- Adicione um script para implementar a lógica de passar para o próximo quiz -->
+    <script>
+        function passarProximoQuiz() {
+            // Lógica para passar para o próximo quiz aqui
+            alert("Implemente a lógica para passar para o próximo quiz aqui!");
+        }
+    </script>
 
-
-    </body>
-
-    </html>
+</body>
+</html>
