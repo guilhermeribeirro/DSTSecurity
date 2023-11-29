@@ -18,7 +18,7 @@ namespace APS.WebApp.Controllers
             return View(resultado);
         }
 
-
+        
 
         public IActionResult Inserir()
         {
@@ -67,17 +67,21 @@ namespace APS.WebApp.Controllers
         }
 
 
-        public ActionResult Editar(int id)
+        public ActionResult Editar()
         {
-            CadastroPessoas pessoa = db.CadastroPessoas.Find(id);
-
-            if (pessoa == null)
+            if (HttpContext.Session.GetInt32("CadastroPessoasID") is int codigo && codigo > 0)
             {
-                return NotFound();
+                CadastroPessoas pessoa = db.CadastroPessoas.Find(codigo);
+
+                if (pessoa != null)
+                {
+                    return View(pessoa);
+                }
             }
 
-            return View(pessoa);
+            return NotFound();
         }
+
 
         [HttpPost]
         public ActionResult Editar(CadastroPessoas pessoa)
@@ -86,6 +90,7 @@ namespace APS.WebApp.Controllers
             {
 
                 var cadastroPessoasId = HttpContext.Session.GetInt32("CadastroPessoasID");
+
 
                 CadastroPessoas pessoaExistente = db.CadastroPessoas.Find(cadastroPessoasId);
                 pessoaExistente.Nome = pessoa.Nome;

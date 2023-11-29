@@ -1,11 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddMvc().AddSessionStateTempDataProvider();
+
+builder.Services.AddSession(options => {
+    options.Cookie.IsEssential = true;
+    options.Cookie.HttpOnly = true;
+});
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-
-
-builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -21,9 +25,10 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseSession(new SessionOptions
 {
-    IdleTimeout = TimeSpan.FromSeconds(10),
+    IdleTimeout = TimeSpan.FromSeconds(10)
 });
 
 app.UseAuthorization();

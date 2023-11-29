@@ -23,6 +23,7 @@ namespace APS.WebApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+
             return View(new UsuarioViewModel());
         }
 
