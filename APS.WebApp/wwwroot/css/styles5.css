@@ -1,108 +1,119 @@
-﻿html, body {
-    height: 100%;
-}
-
-body {
-    background-color: #FFCCCC;
-    color: white;
+﻿#question-container {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
-    margin: 0;
-    padding: 1em;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Propriedade corrigida */
-    align-items: center;
+.question {
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+    .question p {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"]:checked + .question {
+    background-color: #3498db; /* Altere para a cor desejada */
+    color: white; /* Altere a cor do texto, se necessário */
+}
+
+input[type="radio"]:checked + label {
+    color: #3498db; /* Altere para a cor desejada */
 }
 
 input[type="radio"] {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    position: absolute;
+    display: none;
+    margin-right: 5px;
+    cursor: pointer; /* Adicionado para indicar que é clicável */
 }
 
-
-#answers {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5em 2em; /* Valor da propriedade corrigido */
-    background: #ff94a6;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+input[type="text"],
+input[type="radio"] {
+    padding: 8px;
+    font-size: 16px;
 }
 
-#congrats {
-   opacity: 0;
-  
+    input[type="text"]:focus {
+        border: 2px solid #3498db;
+        outline: none;
+    }
 
-}
+    input[type="radio"]:checked {
+        border: 2px solid #3498db;
+    }
 
-.ans {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-    .ans:not(:last-child) {
-        border-bottom: 1px solid white;
+    input[type="radio"]:hover + label::before {
+        text-decoration: underline;
     }
 
 label {
     position: relative;
-    font-size: 1.5em;
-    flex-grow: 1;
-    margin: 1em 0;
 }
 
-    label:first-child:after,
-    label:last-child:after {
-        content: "";
-        display: block;
+    label::before {
+        content: ""; /* Conteúdo vazio, usado para o efeito de sublinhado */
         position: absolute;
-        border-radius: 50%;
-        top: calc(50% - 0.5em);
-        width: 1em;
-        height: 1em;
-        background-color: #808080;
-    }
-
-    label:first-child {
-        padding-left: 2em;
-        margin-right: 1em;
-    }
-
-    label:last-child {
-        padding-right: 2em;
-        margin-left: 1em;
-    }
-
-    label:first-child:after {
+        bottom: -4px; /* Ajuste a posição do sublinhado */
         left: 0;
-    }
-
-    label:last-child:after {
         right: 0;
+        height: 1px; /* Defina a altura do sublinhado */
+        background-color: #3498db; /* Cor do sublinhado */
+        visibility: hidden; /* Inicialmente oculto */
+        transition: visibility 0s, width 0.3s; /* Adicione o efeito de transição */
     }
 
-#length:checked ~ main [for="length"]:first-child:after,
-#lenght:checked ~ main [for="lenght"]:last-child:after
-/*#width:checked ~ main [for="width"]:first-child:after,
-#widht:checked ~ main [for="widht"]:last-child:after,
-#heigth:checked ~ main [for="heigth"]:first-child:after,
-*/ /*#height:checked ~ main [for="height"]:last-child:after*/ {
-    background-color: #E60084;
-    box-shadow: 0 0 2px #0d5155, 0 0 0 5px #E60084;
+input[type="radio"]:hover + label::before {
+    visibility: visible; /* Mostra o sublinhado ao passar o mouse */
+    width: 100%; /* Faz o sublinhado cobrir toda a largura */
 }
 
-#length:checked ~ #width:checked ~ #height:checked ~ main #congrats {
-    opacity: 1;
-    transition: .5s opacity;
+#resultado {
+    animation: fadeIn 1s ease-in-out;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+button {
+    background-color: #4CAF50; /* Cor verde */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    button:hover {
+        background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
+    }
+
+label:hover,
+label:focus {
+    text-decoration: underline;
+ 
+}
+input[type="text"]:focus,
+input[type="radio"]:focus {
+    border: 2px solid #3498db;
+    outline: none;
+ 
+}
