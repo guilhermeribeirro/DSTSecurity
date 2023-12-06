@@ -1,23 +1,53 @@
 ﻿@using APS.Dominio.Entities;
 @model CadastroPessoas
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <script src="~/js/script.js"></script>
+   
+    <title>Sua Empresa 2</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="https://localhost:7179" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="https://localhost:7179/Sobre/Sobre" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="https://localhost:7179/cADASTRoPessoas" class="nav-link">Pessoas</a></li>
+                    <li class="nav-item"><a href="https://localhost:7179/Missao/Missao" class="nav-link">Missão</a></li>
+                    <li class="nav-item"><a href="https://localhost:7179/Depoimentos/Index" class="nav-link">Depoimentos</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="https://localhost:7179/PaginaInicial/PaginaInicial">Pagina Inicial</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+
+    </header>
+  
 
 
-@{
-    ViewBag.Title = "Editar Pessoa";
-}
 
-<h2>Editar Pessoa</h2>
 
+<center>
+<h2><strong>Editar Cadastro</strong></h2>
+</center>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.CadastroPessoasID)
-        @Html.TextBoxFor(model => model.CadastroPessoasID, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.CadastroPessoasID, "", new { @class = "text-danger" })
-    </div>
+    
 
     <div class="form-group">
         @Html.LabelFor(model => model.Nome)
@@ -57,11 +87,14 @@
 
 
     <div class="form-group">
-        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <center><input type="submit" value="Salvar" class="btn btn-primary" /></center>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Voltar para a Lista", "Index")
+    @Html.ActionLink("Voltar para o Inicio", "PaginaInicial")
 </div>
 
+        </body>
+        </html>
+        

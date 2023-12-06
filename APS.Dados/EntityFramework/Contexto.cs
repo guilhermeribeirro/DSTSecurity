@@ -21,7 +21,7 @@ namespace APS.Dados.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data source = 10.107.176.41, 1434; 
+            optionsBuilder.UseSqlServer(@"Data source = 201.62.57.93, 1434; 
                                     Database = BD038216; 
                                     User ID = RA038216; 
                                     Password = 038216;

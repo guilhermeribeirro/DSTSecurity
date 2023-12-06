@@ -220,7 +220,7 @@
 
     label {
         font-weight: bold;
-        font-size: .8rem;
+        font-size: 17px;
     }
 
     input {
@@ -390,6 +390,7 @@
         width: 100%;
     }
 
+    
 
     p {
         margin: 5px 0;
@@ -398,9 +399,49 @@
     }
 
     h2 {
-        font-family: Arial, sans-serif;
+        
+        font-size: 3.0em;
+        color: #000;
+        text-align: justify;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
+        font-size: 30px;
+    }
+
+
+
+    h3     {
+        font-size: 3.0em;
+        color: #000;
+        text-align: center;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out forwards;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px #333;
+        font-size: 50px;
+
+
+
+
+    }
+    h1{
+        font-size: 3.0em;
+        color: red;
+        
+        margin: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        
+        font-weight: bold;
+        text-shadow: 2px 2px 5px red;
+        font-size: 15px;
+
     }
 
     </style>
@@ -443,10 +484,30 @@
     </div >
     </header >
         <header>
-            <center> <h2>Questionário</h2> </center>
+            <center> <h2>Segue o Questionário</h2> </center>
         </header>
+        
+            <h2 class=" animated">
+                O Questionário de 13 perguntas para o pré-diagnóstico de doenças
+                sexualmente transmissíveis é uma ferramenta crucial na promoção da saúde sexual.
+                Ao avaliar comportamentos de risco, gerar consciência pessoal e identificar precocemente sintomas,
+                o questionário contribui para a detecção precoce de DSTs. Além disso, ao quebrar estigmas, promover 
+                responsabilidade individual e fortalecer a comunicação nos relacionamentos, torna-se uma abordagem proativa 
+                para criar uma sociedade mais informada e saudável.
+        </h2>
+        <h1 class=" animated">* RESPONDA DE FORMA SINCERA E CORRETA  </h1>
 
-        <section id="question-container">
+        <h3 class=" animated">
+            Segue o Questionário</h3>
+
+        <img id="imagem-resultado" src="~/css/verificacao-da-lista-de-entrega-prancheta-simbolo_318-61556-520x520-removebg-preview.png" alt="Descrição da imagem" style="display: none; width: 15%; margin: 0 auto;">
+
+        <h3 id="resultado-title" class="animated" style="display: none;">Segue o Resultado</h3>
+
+
+
+
+                <section id="question-container">
             <div id="question1" class="question">
                 <p>Pergunta 1: Você teve relações sexuais sem o uso de preservativo (masculino ou feminino)?</p>
                 <label>
@@ -565,19 +626,17 @@
                     <input type="radio" name="q13" value="nao"> Não
                 </label>
             </div>
-            
-
-          
-
         </section>
 
         <center>
-            <button onclick="passarProximaPergunta()">Próxima Pergunta</button> </center>
-
+            <button onclick="voltarPergunta()">Pergunta Anterior</button>
+            <button onclick="passarProximaPergunta()">Próxima Pergunta</button>
+        </center>
         <section id="resultado" style="display: none;">
             <h2>Resultados</h2>
             <p id="respostas-sim"></p>
             <p id="respostas-nao"></p>
+            <p id="resultado-final"></p>
         </section>
     </main>
 
@@ -610,11 +669,62 @@
             }
         }
 
+        // function mostrarResultados() {
+        //     document.getElementById('question-container').style.display = 'none';
+        //     document.getElementById('resultado').style.display = 'block';
+        //     document.getElementById('respostas-sim').innerText = `Voce respondeu "Sim" ${respostasSim} vezes`; document.getElementById('respostas-nao').innerText = `e "Não" ${respostasNao} vezes`;
+        // }
+
+
+        function verificarSoropositivo() {
+            // Modifique o número conforme necessário com base na quantidade de perguntas "Sim" necessárias
+            const limiteRespostasSim = 9;
+            const resultadoFinalElement = document.getElementById('resultado-final');
+
+            if (respostasSim >= limiteRespostasSim) {
+                resultadoFinalElement.innerText = 'Você tem grande probabilidade de ser soropositivo. Busque ajuda IMEDIATAMENTE!, Procure um dos nosso especialistas e marque uma consulta através de uns dos contatos no nosso site';
+            } else {
+                resultadoFinalElement.innerText = 'Você não é soropositivo. Mas busque um especialista para diagnosticar com precisão o seu caso. Caso queira, procure um dos nosso especialista';
+            }
+
+            // Centralizar o texto na tela
+            resultadoFinalElement.style.textAlign = 'center';
+            resultadoFinalElement.style.marginTop = '20px'; /* Ajuste conforme necessário para espaçamento superior */
+        }
+
+
+        // Função para mostrar resultados e verificar soropositividade
         function mostrarResultados() {
+            document.getElementById('imagem-resultado').style.display = 'block';
+
+            document.getElementById('resultado-title').style.display = 'block';
             document.getElementById('question-container').style.display = 'none';
             document.getElementById('resultado').style.display = 'block';
-            document.getElementById('respostas-sim').innerText = `Respostas "Sim": ${respostasSim}`;
-            document.getElementById('respostas-nao').innerText = `Respostas "Não": ${respostasNao}`;
+            document.getElementById('respostas-sim').innerText = `Voce respondeu "Sim" ${respostasSim} vezes`; document.getElementById('respostas-nao').innerText = `e "Não" ${respostasNao} vezes`;
+           
+            document.getElementById('resultado').style.display = 'flex';
+            document.getElementById('resultado').style.flexDirection = 'column';
+            document.getElementById('resultado').style.alignItems = 'center';
+            document.getElementById('resultado').style.justifyContent = 'center';
+            document.getElementById('resultado').style.textAlign = 'center';
+            document.getElementById('resultado').style.height = '100vh';
+            // Chame a função para verificar soropositividade
+            verificarSoropositivo();
+            document.querySelector('h3.animated').style.display = 'none';
+            document.querySelector('h1.animated').style.display = 'none';
+            document.querySelector('button[onclick="voltarPergunta()"]').style.display = 'none';
+            document.querySelector('button[onclick="passarProximaPergunta()"]').style.display = 'none';
+        }
+
+        function voltarPergunta() {
+            if (indiceAtual > 0) {
+                perguntas[indiceAtual].style.display = 'none';
+                indiceAtual--;
+
+                perguntas[indiceAtual].style.display = 'block';
+            } else {
+                alert('Você está na primeira pergunta.');
+            }
         }
     </script>
 

@@ -49,5 +49,19 @@
             </div>
         </form>
     </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var form = document.querySelector('form');
+
+        form.addEventListener('submit', function (event) {
+            var agreementCheckbox = document.getElementById('agreement');
+
+            if (!agreementCheckbox.checked) {
+                alert('Você precisa aceitar os termos de uso para continuar.');
+                event.preventDefault(); // Impede o envio do formulário
+            }
+        });
+    });
+</script>
 
     <p class="error-validation template"> </p>

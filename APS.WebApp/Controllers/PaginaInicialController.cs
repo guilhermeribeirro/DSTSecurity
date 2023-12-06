@@ -8,5 +8,17 @@ namespace APS.WebApp.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Especialista()
+        {
+            return View();
+        }
+
+
+        public IActionResult Doencas()
+        {
+            return View();
+        }
     }
 }

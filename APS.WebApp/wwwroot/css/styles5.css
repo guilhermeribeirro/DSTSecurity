@@ -1,25 +1,46 @@
-﻿#question-container {
+﻿
+.animated {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+#question-container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+  
 }
 
 .question {
-    margin-bottom: 5px;
+    margin-bottom: 60px;
     border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 20px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
 }
 
     .question p {
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
+        font-size: 20px;
     }
 
 label {
     display: block;
     margin-bottom: 10px;
+    font-size: 90px;
 }
 
 input[type="radio"]:checked + .question {
@@ -35,21 +56,22 @@ input[type="radio"] {
     display: none;
     margin-right: 5px;
     cursor: pointer; /* Adicionado para indicar que é clicável */
+    font-size: 90px;
 }
 
 input[type="text"],
 input[type="radio"] {
-    padding: 8px;
-    font-size: 16px;
+    padding: 20px;
+    font-size: 90px;
 }
 
     input[type="text"]:focus {
-        border: 2px solid #3498db;
+        border: 20px solid #3498db;
         outline: none;
     }
 
     input[type="radio"]:checked {
-        border: 2px solid #3498db;
+        border: 20px solid #3498db;
     }
 
     input[type="radio"]:hover + label::before {
@@ -92,7 +114,7 @@ input[type="radio"]:hover + label::before {
 }
 
 button {
-    background-color: #4CAF50; /* Cor verde */
+    background-color: #E60084; /* Cor verde */
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -103,7 +125,7 @@ button {
 }
 
     button:hover {
-        background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
+        background-color: #e42b95; /* Cor verde mais escura ao passar o mouse */
     }
 
 label:hover,
@@ -113,7 +135,8 @@ label:focus {
 }
 input[type="text"]:focus,
 input[type="radio"]:focus {
-    border: 2px solid #3498db;
+    border: 20px solid #3498db;
     outline: none;
  
 }
+
