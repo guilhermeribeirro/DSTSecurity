@@ -14,6 +14,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js" integrity="..."></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (hash)" crossorigin="anonymous" />
+
 
 
 </head>
@@ -416,6 +418,29 @@
         text-shadow: 2px 2px 5px #333;
     }
 
+    .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 8px; /* Ajuste o tamanho do ícone conforme necessário */
+        color: green;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+        /* Se você estiver usando uma imagem em vez do ícone do Font Awesome */
+        .whatsapp-icon img {
+            width: 50px; /* Ajuste a largura da imagem conforme necessário */
+            height: 50px; /* Ajuste a altura da imagem conforme necessário */
+        }
+
+    .whatsapp-link {
+        text-decoration: none; /* Remove o sublinhado padrão do link */
+        color: inherit; /* Mantém a cor padrão do texto */
+        /* Adicione estilos adicionais conforme necessário */
+    }
+
+
 </style>
 
 
@@ -638,6 +663,13 @@
             </p>
         </div>
     </div>
+    <a href="https://wa.me/5534992277918" target="_blank" class="whatsapp-link">
+        <div class="whatsapp-icon">
+            <img src="~/css/b357a82495676c6c808a7b8c818f5460-removebg-preview.png" alt="WhatsApp Icon">
+        </div>
+    </a>
+
+
     <footer>
         <div class="container">
             <p>&copy; 2023 DST'Security. Todos os direitos reservados.</p>

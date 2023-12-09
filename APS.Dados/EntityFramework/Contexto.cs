@@ -15,6 +15,8 @@ namespace APS.Dados.EntityFramework
 
         public DbSet<Depoimentos> Depoimentos { get; set; }
 
+        public DbSet<CadastroMedicos> CadastroMedicos { get; set; }
+
         public Contexto() : base()
         {
         }
