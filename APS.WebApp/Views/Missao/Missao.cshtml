@@ -469,6 +469,29 @@
 
 
     }
+
+
+    .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 8px; /* Ajuste o tamanho do ícone conforme necessário */
+        color: green;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+        /* Se você estiver usando uma imagem em vez do ícone do Font Awesome */
+        .whatsapp-icon img {
+            width: 50px; /* Ajuste a largura da imagem conforme necessário */
+            height: 50px; /* Ajuste a altura da imagem conforme necessário */
+        }
+
+    .whatsapp-link {
+        text-decoration: none; /* Remove o sublinhado padrão do link */
+        color: inherit; /* Mantém a cor padrão do texto */
+        /* Adicione estilos adicionais conforme necessário */
+    }
 </style>
 
 
@@ -483,7 +506,7 @@
                     <li class="nav-item"><a href="https://localhost:7179/Sobre/Sobre" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="https://localhost:7179/cADASTRoPessoas" class="nav-link">Pessoas</a></li>
                     <li class="nav-item"><a href="https://localhost:7179/Missao/Missao" class="nav-link">Missão</a></li>
-                    <li class="nav-item"><a href="https://localhost:7179/Depoimentos/Index" class="nav-link">Depoimentos</a></li>
+                    <li class="nav-item"><a href="https://localhost:7179/Depoimentos/Index" class="nav-link">Relatos</a></li>
                 </ul>
             </div>
             <div class="login-button">
@@ -577,6 +600,12 @@
     </footer>
 
 
+
+    <a href="https://wa.me/5534992277918" target="_blank" class="whatsapp-link">
+        <div class="whatsapp-icon">
+            <img src="~/css/b357a82495676c6c808a7b8c818f5460-removebg-preview.png" alt="WhatsApp Icon">
+        </div>
+    </a>
 
 
 </body>

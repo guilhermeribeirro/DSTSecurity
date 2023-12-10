@@ -529,3 +529,25 @@ nav {
         text-decoration: none;
         margin-right: 10px;
     }
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 8px; /* Ajuste o tamanho do ícone conforme necessário */
+    color: green;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+    /* Se você estiver usando uma imagem em vez do ícone do Font Awesome */
+    .whatsapp-icon img {
+        width: 50px; /* Ajuste a largura da imagem conforme necessário */
+        height: 50px; /* Ajuste a altura da imagem conforme necessário */
+    }
+
+.whatsapp-link {
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    color: inherit; /* Mantém a cor padrão do texto */
+    /* Adicione estilos adicionais conforme necessário */
+}

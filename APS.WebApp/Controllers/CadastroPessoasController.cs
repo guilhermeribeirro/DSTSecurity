@@ -38,6 +38,13 @@ namespace APS.WebApp.Controllers
             return View("ConfirmarCadastro");
         }
 
+        public IActionResult EditarCadastroConfirmado()
+        {
+            return View("EditarCadastroConfirmado");
+        }
+
+
+
         [HttpPost]
         public IActionResult InserirConfirmar(CadastroPessoas ent)
         {
@@ -93,29 +100,37 @@ namespace APS.WebApp.Controllers
 
 
         [HttpPost]
+      
+        [ValidateAntiForgeryToken]
         public ActionResult Editar(CadastroPessoas pessoa)
         {
             if (ModelState.IsValid)
             {
-
                 var cadastroPessoasId = HttpContext.Session.GetInt32("CadastroPessoasID");
 
-
                 CadastroPessoas pessoaExistente = db.CadastroPessoas.Find(cadastroPessoasId);
-                pessoaExistente.Nome = pessoa.Nome;
-                pessoaExistente.Sobrenome = pessoa.Sobrenome;
-                pessoaExistente.CPF = pessoa.CPF;
-                pessoaExistente.Sexo = pessoa.Sexo;
-                pessoaExistente.Endereco = pessoa.Endereco;
-                pessoaExistente.Email = pessoa.Email;
-                pessoaExistente.Senha = pessoa.Senha;
 
-                
-                db.SaveChanges();
+                if (pessoaExistente != null)
+                {
+                    pessoaExistente.Nome = pessoa.Nome;
+                    pessoaExistente.Sobrenome = pessoa.Sobrenome;
+                    pessoaExistente.CPF = pessoa.CPF;
+                    pessoaExistente.Sexo = pessoa.Sexo;
+                    pessoaExistente.Endereco = pessoa.Endereco;
+                    pessoaExistente.Email = pessoa.Email;
+                    pessoaExistente.Senha = pessoa.Senha;
 
-                return RedirectToAction("Index"); 
+                    db.SaveChanges();
+
+                    return RedirectToAction("EditarCadastroConfirmado");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Pessoa não encontrada");
+                }
             }
 
+            // Se o ModelState não estiver válido ou a pessoa não for encontrada, redisplay o formulário com erros
             return View(pessoa);
         }
 

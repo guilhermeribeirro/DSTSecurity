@@ -71,6 +71,21 @@
         });
     });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var form = document.querySelector('form');
+
+        form.addEventListener('submit', function (event) {
+            var cpfInput = document.getElementById('CPF');
+            var cpfValue = cpfInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+            if (cpfValue.length !== 11 || isNaN(cpfValue)) {
+                alert('CPF inválido. Por favor, insira um CPF com 11 dígitos numéricos.');
+                event.preventDefault(); // Impede o envio do formulário
+            }
+        });
+    });
+</script>
 
 
 <p class="error-validation template"> </p>

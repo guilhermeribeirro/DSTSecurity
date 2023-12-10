@@ -8,6 +8,14 @@ builder.Services.AddSession(options => {
     options.Cookie.HttpOnly = true;
 });
 
+
+builder.Services.AddSession(options =>
+{
+    // Configurações opcionais, como tempo limite da sessão, podem ser definidas aqui.
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+});
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
