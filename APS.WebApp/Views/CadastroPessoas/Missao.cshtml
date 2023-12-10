@@ -1,4 +1,6 @@
-﻿
+﻿@using APS.Dominio.Entities;
+
+@model IEnumerable<CadastroPessoas>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,13 +33,13 @@
     }
 
     /* .nav-bar, .mobile-menu {
-                            width: 100%;
-                        }
+                                width: 100%;
+                            }
 
-                        body, .container-fluid {
-                            margin: 0;
-                            padding: 0;
-                        } */
+                            body, .container-fluid {
+                                margin: 0;
+                                padding: 0;
+                            } */
 
     header {
         background-color: #FFCCCC;
@@ -51,16 +53,16 @@
     }
 
     /*  .navbar {
-                            margin: 0;
-                            padding: 0;
-                        } */
+                                margin: 0;
+                                padding: 0;
+                            } */
 
 
 
     /* .logo {
-                            display: flex;
-                            align-items: center;
-                        } */
+                                display: flex;
+                                align-items: center;
+                            } */
 
 
 
@@ -75,9 +77,9 @@
 
 
     /*  .nav-list {
-                            display: flex;
-                            align-items: center;
-                        } */
+                                display: flex;
+                                align-items: center;
+                            } */
 
     .nav-list ul {
         display: flex;
@@ -339,10 +341,10 @@
     }
 
     /* h2 {
-                    font-size: 1.5rem;
-                    color: #333;
-                    margin-bottom: 10px;
-                } */
+                        font-size: 1.5rem;
+                        color: #333;
+                        margin-bottom: 10px;
+                    } */
 
     p {
         font-size: 1rem;
@@ -418,56 +420,56 @@
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
     }
+
     #numeros {
-    position: relative;
-    text-align: center;
-    color: #ffffff; /* Cor do texto */
-}
-
-    #numeros h2 {
-        font-size: 3em;
-        margin-bottom: 20px;
+        position: relative;
+        text-align: center;
+        color: #ffffff; /* Cor do texto */
     }
 
-    #numeros p {
-        font-size: 1.5em;
-    }
+        #numeros h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
 
-/* Adicione estilos para a animação aqui */
-#fadeIn {
-    from {
+        #numeros p {
+            font-size: 1.5em;
+        }
+
+    /* Adicione estilos para a animação aqui */
+    #fadeIn {
+        from
+
+    {
         opacity: 0;
     }
 
     to {
         opacity: 1;
     }
-}
 
-.wow {
-    animation: fadeIn 1s ease-in-out;
-}
-.h3{
+    }
+
+    .wow {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .h3 {
         font-family: Arial, sans-serif;
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
-
-
-
-}
+    }
 
     .my-0 {
         font-family: Arial, sans-serif;
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
     }
+
     .wow {
         font-family: Arial, sans-serif;
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
-
-
-
     }
 </style>
 
@@ -508,7 +510,7 @@
         </div>
     </header>
 
-    
+
     <section id="numeros" class="container-fluid bg-cover" style="background-color:#ff94a6">
 
         <div class="container">
@@ -521,7 +523,7 @@
                             </h2>
                             <div class="wow fadeIn">
                             </div>
-                            <a href="#" title="Saiba mais" class="cta mt-4 bg-rosa wow fadeInUp">Saiba mais</a>
+                            <a href="https://localhost:7179/cADASTRoPessoas" title="Saiba mais" class="cta mt-4 bg-rosa wow fadeInUp">Saiba mais</a>
                         </div>
                         <div class="col-lg-6 my-3">
                             <div class="border-radius-10 p-sm-5 wow fadeInRight">
@@ -531,7 +533,7 @@
                                             Último mês
                                         </h4>
                                         <h3 class="my-0" style="background-image: url('http://bahamassocial.com.br/wp-content/themes/bahamas-social/img/img-troco/bg-numeros.png')">
-                                            <span id="ultimoMes">Aguarde...</span>
+                                            <span>@ViewBag.NumeroRegistros Pessoas</span>
                                         </h3>
                                     </div>
                                     <div class="col-md-11 mb-4">
@@ -539,7 +541,7 @@
                                             Total deste ano
                                         </h4>
                                         <h3 class="my-0 bg-contain p-3" style="background-image: url('http://bahamassocial.com.br/wp-content/themes/bahamas-social/img/img-troco/bg-numeros.png')">
-                                            <span>Aproximadamente 30 Pessoas</span>
+                                            <span>Aproximadamente @ViewBag.NumeroRegistros Pessoas</span>
                                         </h3>
                                     </div>
                                     <div class="col-md-11">
@@ -563,9 +565,9 @@
 
 
 
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="~/js/obter_numero_registros.php"></script>
-<script src="~/js/script1.js"></script>
+    <script src="~/js/script1.js"></script>
 
 
     <footer>

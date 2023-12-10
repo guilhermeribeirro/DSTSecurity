@@ -8,16 +8,19 @@
 
   <ItemGroup>
     <Content Remove="Views\CadastroPessoas\DeletarCadastro.cshtml" />
+    <Content Remove="wwwroot\js\obter_numero_registros.php" />
     <Content Remove="wwwroot\js\script1.js" />
     <Content Remove="wwwroot\js\server.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\obter_numero_registros.php" />
     <_ContentIncludedByDefault Remove="wwwroot\js\script1.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\server.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\obter_numero_registros.php" />
     <None Include="wwwroot\js\script1.js" />
     <None Include="wwwroot\js\server.js" />
   </ItemGroup>

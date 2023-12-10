@@ -1,6 +1,8 @@
 ﻿using APS.Dados.EntityFramework;
-using APS.Dominio.Entities;
 using Microsoft.AspNetCore.Mvc;
+using APS.Dominio.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace APS.WebApp.Controllers
 {
@@ -20,6 +22,13 @@ namespace APS.WebApp.Controllers
         public IActionResult Inserir()
         {
             var ent = new CadastroMedicos();
+
+            ViewBag.SexosDisponiveis = new List<SelectListItem> {
+                new SelectListItem { Value = "M", Text = "Masculino" },
+                new SelectListItem { Value = "F", Text = "Feminino" },
+                new SelectListItem { Value = "O", Text = "Outro" },
+            };
+
             return View(ent);
         }
 

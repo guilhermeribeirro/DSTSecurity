@@ -3,3 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const numerosSection = document.getElementById("numeros");
     numerosSection.classList.add("wow");
 });
+
+
+
+// Adicione este conteúdo no seu script1.js

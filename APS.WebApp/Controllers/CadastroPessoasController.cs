@@ -82,6 +82,15 @@ namespace APS.WebApp.Controllers
             return NotFound();
         }
 
+        public IActionResult Missao()
+        {
+            var numeroRegistros = db.CadastroPessoas.Count();
+            ViewBag.NumeroRegistros = numeroRegistros;
+            return View();
+        }
+
+
+
 
         [HttpPost]
         public ActionResult Editar(CadastroPessoas pessoa)
@@ -111,4 +120,8 @@ namespace APS.WebApp.Controllers
         }
 
     }
+
+
+
+
 }

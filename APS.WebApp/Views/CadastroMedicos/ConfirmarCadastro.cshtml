@@ -1,11 +1,8 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="~/css/style1.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
@@ -30,15 +27,6 @@
         font-family: 'Inter', sans-serif;
     }
 
-    /* .nav-bar, .mobile-menu {
-                            width: 100%;
-                        }
-
-                        body, .container-fluid {
-                            margin: 0;
-                            padding: 0;
-                        } */
-
     header {
         background-color: #FFCCCC;
         box-shadow: 0px 3px 10px #FFCCCC;
@@ -49,18 +37,6 @@
         justify-content: space-between;
         padding: 1.5rem 6rem;
     }
-
-    /*  .navbar {
-                            margin: 0;
-                            padding: 0;
-                        } */
-
-
-
-    /* .logo {
-                            display: flex;
-                            align-items: center;
-                        } */
 
 
 
@@ -75,9 +51,9 @@
 
 
     /*  .nav-list {
-                            display: flex;
-                            align-items: center;
-                        } */
+                                            display: flex;
+                                            align-items: center;
+                                        } */
 
     .nav-list ul {
         display: flex;
@@ -98,7 +74,7 @@
 
     .login-button button {
         border: none;
-        padding: 12px 15px;
+        padding: 9px 12px;
         border-radius: 5px;
         background-color: #E60084;
     }
@@ -106,7 +82,7 @@
         .login-button button a {
             text-decoration: none;
             color: white;
-            font-weight: 500;
+            font-weight: 200;
             font-size: 1.1rem;
         }
 
@@ -339,10 +315,10 @@
     }
 
     /* h2 {
-                    font-size: 1.5rem;
-                    color: #333;
-                    margin-bottom: 10px;
-                } */
+                                    font-size: 1.5rem;
+                                    color: #333;
+                                    margin-bottom: 10px;
+                                } */
 
     p {
         font-size: 1rem;
@@ -418,56 +394,57 @@
         font-weight: bold;
         text-shadow: 2px 2px 5px #333;
     }
-    #numeros {
-    position: relative;
-    text-align: center;
-    color: #ffffff; /* Cor do texto */
-}
 
-    #numeros h2 {
-        font-size: 3em;
-        margin-bottom: 20px;
+    /*
+        .confirmation {
+            background-color: #fff;
+            max-width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .confirmation h1 {
+                color: #333;
+            }
+
+            .confirmation .icon {
+                animation: scale 1s infinite;
+            }
+
+        . scale {
+            0%
+
+        {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+
+        }*/
+    .confirmation .image-container {
+        text-align: center;
+        transition: opacity 0.5s, transform 0.5s;
     }
 
-    #numeros p {
-        font-size: 1.5em;
-    }
 
-/* Adicione estilos para a animação aqui */
-#fadeIn {
-    from {
+
+    .success-message {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.wow {
-    animation: fadeIn 1s ease-in-out;
-}
-.h3{
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        text-shadow: 2px 2px 5px #333;
-
-
-
-}
-
-    .my-0 {
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        text-shadow: 2px 2px 5px #333;
-    }
-    .wow {
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        text-shadow: 2px 2px 5px #333;
-
-
-
+        transform: translateY(100%);
+        transition: opacity 0.5s, transform 0.5s;
     }
 </style>
 
@@ -486,21 +463,16 @@
                     <li class="nav-item"><a href="https://localhost:7179/Depoimentos/Index" class="nav-link">Depoimentos</a></li>
                 </ul>
             </div>
-            <div class="login-button">
-                <button><a href="https://localhost:7179/cADASTRoPessoas/Inserir">Cadastre</a></button>
-            </div>
-            <div class="login-button">
-                <button><a href="https://localhost:7179/Autenticacao/Index">Entrar</a></button>
-            </div>
+           
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
             </div>
         </nav>
         <div class="mobile-menu">
             <ul>
-                <li class="nav-item"><a href="https://localhost:7179/" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-                <li class="nav-item"><a href="https://localhost:7179/Sobre/Sobre" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
             </ul>
             <div class="login-button">
                 <button><a href="#">Entrar</a></button>
@@ -508,64 +480,18 @@
         </div>
     </header>
 
-    
-    <section id="numeros" class="container-fluid bg-cover" style="background-color:#ff94a6">
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 my-3 text-center">
-                            <h2 class="font-size-50 mb-4 wow fadeInDown">
-                                <b>Números do Projeto</b>
-                            </h2>
-                            <div class="wow fadeIn">
-                            </div>
-                            <a href="#" title="Saiba mais" class="cta mt-4 bg-rosa wow fadeInUp">Saiba mais</a>
-                        </div>
-                        <div class="col-lg-6 my-3">
-                            <div class="border-radius-10 p-sm-5 wow fadeInRight">
-                                <div class="row justify-content-center text-center">
-                                    <div class="col-md-11 mb-4">
-                                        <h4 class="wow fadeIn font-size-35 font-700 mt-0 mb-2">
-                                            Último mês
-                                        </h4>
-                                        <h3 class="my-0" style="background-image: url('http://bahamassocial.com.br/wp-content/themes/bahamas-social/img/img-troco/bg-numeros.png')">
-                                            <span id="ultimoMes">Aguarde...</span>
-                                        </h3>
-                                    </div>
-                                    <div class="col-md-11 mb-4">
-                                        <h4 class=" wow fadeIn font-size-35 font-700 mt-0 mb-2">
-                                            Total deste ano
-                                        </h4>
-                                        <h3 class="my-0 bg-contain p-3" style="background-image: url('http://bahamassocial.com.br/wp-content/themes/bahamas-social/img/img-troco/bg-numeros.png')">
-                                            <span>Aproximadamente 30 Pessoas</span>
-                                        </h3>
-                                    </div>
-                                    <div class="col-md-11">
-                                        <h4 class=" wow fadeIn font-size-35 font-700 mt-0 mb-2">
-                                            Expectativa para 2024
-                                        </h4>
-                                        <h3 class="my-0 bg-contain p-3" style="background-image: url('http://bahamassocial.com.br/wp-content/themes/bahamas-social/img/img-troco/bg-numeros.png')">
-                                            <span>500 Pessoas‬</span>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="confirmation">
+        <div class="image-container">
+            <img src="~/css/Confirmado-removebg-preview.png" alt="Cadastro Confirmado" style="width: 250px;">
         </div>
-    </section>
+    </div>
 
-
-
-
-
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="~/js/obter_numero_registros.php"></script>
-<script src="~/js/script1.js"></script>
+    <div class="container">
+        <div class="success-message">
+            <center> <h1>Cadastro Efetuado com Sucesso!</h1></center>
+            <center><p>Parabéns! Seu cadastro foi realizado com sucesso.</p></center>
+        </div>
+    </div>
 
 
     <footer>
@@ -580,51 +506,27 @@
 
 
 </body>
-
 <script>
-
-    $(document).ready(function () {
-        // Fazer uma requisição AJAX para obter o número de registros
-        $.ajax({
-            url: 'obter_numero_registros.php',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                // Atualizar o conteúdo com o número real de registros
-                $('#ultimoMes').text(data.numeroRegistros + ' Pessoas');
-            },
-            error: function () {
-                console.error('Erro ao obter o número de registros.');
-            }
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentDate = new Date();
+        const dateElement = document.getElementById("currentDate");
+        dateElement.textContent = currentDate.toLocaleDateString();
     });
 
+</script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const successMessage = document.querySelector(".success-message");
 
-
-
+        setTimeout(function () {
+            successMessage.style.opacity = "1";
+            successMessage.style.transform = "translateY(0)";
+        }, 1000);
+    });
 
 
 </script>
 
 
-
-
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
