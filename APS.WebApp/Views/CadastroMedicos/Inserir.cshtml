@@ -3,38 +3,39 @@
 
 
 <div id="main-container">
-    <h1>Cadastre-se</h1>
+    <h1><strong>Cadastre-se</strong></h1>
     <form asp-action="InserirConfirmar" asp-controller="CadastroMedicos" method="POST">
 
         <div class="half-box spacing">
             <label for="Nome">Nome</label>
-            <input asp-for="Nome" class="form-control" />
+            <input asp-for="Nome" class="form-control" placeholder="Digite seu nome" />
         </div>
         <div class="half-box">
             <label for="Sobrenome">Sobrenome</label>
-            <input asp-for="Sobrenome" class="form-control" />
+            <input asp-for="Sobrenome" class="form-control" placeholder="Digite seu sobrenome" />
         </div>
         <div class="half-box spacing">
             <label for="CPF">CPF (Sem pontos e traços)</label>
-            <input asp-for="CPF" class="form-control" />
+            <input asp-for="CPF" class="form-control" placeholder="Digite seu CPF" />
         </div>
 
 
         <div class="half-box">
             <label for="Endereco">Endereço</label>
-            <input asp-for="Endereco" class="form-control" />
+            <input asp-for="Endereco" class="form-control" placeholder="Digite seu endereço" />
         </div>
         <div class="full-box">
             <label for="Email">E-mail</label>
-            <input asp-for="Email" class="form-control" />
+            <input asp-for="Email" class="form-control" placeholder="Digite seu e-mail" />
         </div>
+
         <div class="half-box spacing">
             <label for="NomeClinica">Nome da Clinica</label>
-            <input asp-for="NomeClinica" class="form-control" />
+            <input asp-for="NomeClinica" class="form-control" placeholder="Digite o nome da clinica" />
         </div>
         <div class="half-box spacing">
             <label for="Especializacao">Especializacao</label>
-            <input asp-for="Especializacao" class="form-control" />
+            <input asp-for="Especializacao" class="form-control" placeholder="Digite sua especialização" />
         </div>
         <div class="half-box spacing">
             <label for="Numero">Número de Telefone</label>

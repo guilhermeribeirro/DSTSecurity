@@ -536,11 +536,11 @@
     <table class="table table-striped table-sm tabela-rosa">
         <thead>
             <tr class="text-center">
-                <th class ="text-center">Codigo</th>
-                <th class="text-center">Nome</th>
+                @* <th class ="text-center">Codigo</th> *@
+                <th class="text-center"><STRONG>Nome</STRONG></th>
                 <!-- <th>Sobrenome</th> -->
                 <!-- <th>CPF</th> -->
-                <th class="text-center">Sexo</th>
+                <th class="text-center"><strong>Sexo</strong></th>
                 <!-- <th>Endereco</th> -->
                 <!-- <th>Email</th> -->
                 <!-- <th>Senha</th> -->
@@ -550,11 +550,11 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="blink text-center">@item.CadastroPessoasID</td>
-                    <td class="blink text-center">@item.Nome</td> <!-- Adicionado "text-center" para centralizar -->
+                   @*  <td class="blink text-center">@item.CadastroPessoasID</td> *@
+                    <td class="blink text-center"><strong>@item.Nome</strong></td> <!-- Adicionado "text-center" para centralizar -->
                     <!-- <td class="blink">@item.Sobrenome</td> -->
                     <!-- <td class="blink">@item.CPF</td> -->
-                    <td class="blink text-center">@item.Sexo</td> <!-- Adicionado "text-center" para centralizar -->
+                    <td class="blink text-center"><strong>@item.Sexo</strong></td> <!-- Adicionado "text-center" para centralizar -->
                     @* <!-- <td class="blink">@item.Endereco</td> -->
                     <!-- <td class="blink">@item.Email</td> -->
                     <!-- <td class="blink">@item.Senha</td> -->
