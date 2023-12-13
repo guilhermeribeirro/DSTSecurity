@@ -1,21 +1,21 @@
 ﻿@using APS.Dominio.Entities;
-@model CadastroPessoas
+
+@model IEnumerable<CadastroPessoas>
 
 
 
 
-<h2>Excluir Pessoa</h2>
 
-<p>Tem certeza de que deseja excluir esta pessoa?</p>
-
-<p>
-    <strong>Seu ID Fonecido: </strong> @Model.CadastroPessoasID <!-- Substitua com os campos relevantes do seu modelo -->
-</p>
-
-@using (Html.BeginForm())
+@foreach (var pessoa in Model)
 {
-    @Html.AntiForgeryToken()
-
-        <input type="submit" value="Excluir" class="btn btn-danger" />
-    @Html.ActionLink("Cancelar", "Index")
+    <tr>
+        <td>@pessoa.Nome</td>
+        <td>@pessoa.Sobrenome</td>
+        <!-- Adicione outras células conforme necessário -->
+        <td>
+            <a asp-action="Editar" asp-route-id="@pessoa.CadastroPessoasID">Editar</a>
+            <a asp-action="Excluir" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+        </td>
+    </tr>
 }
+

@@ -38,6 +38,12 @@ namespace APS.WebApp.Controllers
             return View("ConfirmarCadastro");
         }
 
+
+        public IActionResult ConfirmarExclusao()
+        {
+            return View("ConfirmarExclusao");
+        }
+
         public IActionResult EditarCadastroConfirmado()
         {
             return View("EditarCadastroConfirmado");
@@ -53,25 +59,25 @@ namespace APS.WebApp.Controllers
             return RedirectToAction("ConfirmarCadastro");
         }
 
-        public IActionResult Excluir(int? cadastropessoasId)
+        public IActionResult Excluir()
         {
-            if (cadastropessoasId == null)
+            if (HttpContext.Session.GetInt32("CadastroPessoasID") is int id && id > 0)
             {
-                return BadRequest(); 
+                var pessoaParaExcluir = db.CadastroPessoas.Find(id);
+
+                if (pessoaParaExcluir != null)
+                {
+                    db.CadastroPessoas.Remove(pessoaParaExcluir);
+                    db.SaveChanges();
+                }
+
+                // Limpa a session após a exclusão
+                HttpContext.Session.Remove("CadastroPessoasID");
             }
 
-            var objeto = db.CadastroPessoas.FirstOrDefault(f => f.CadastroPessoasID == cadastropessoasId);
-
-            if (objeto == null)
-            {
-                return NotFound();
-            }
-
-            db.CadastroPessoas.Remove(objeto);
-            db.SaveChanges();
-
-            return RedirectToAction("Index");
+            return RedirectToAction("ConfirmarExclusao");
         }
+
 
 
         public ActionResult Editar()
